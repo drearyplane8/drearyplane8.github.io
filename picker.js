@@ -2573,8 +2573,17 @@ York,York`)
 
 function onLoad(){
 
-    let dataArray = data.split("/\r?\n|\r|\n/g")
-    console.log("data array")
+    //get data from long string into a long array of comma seperated strings
+    let dataArray = data.split("\n")
+    console.log(data)
+    console.log(dataArray)
+
+    //split the array of comma seperated strings into a 2d array of station-county pairs
+    let data2dArray = new Array(dataArray.length)
+    for(var i = 0; i < dataArray.length; i++) {
+        data2dArray[i] = dataArray[i].split(",");
+    }
+    console.log(data2dArray)
 
     const form = document.getElementById("form")
 
