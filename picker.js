@@ -2569,10 +2569,7 @@ Wrexham General,Wrexham - Wrecsam
 Poppleton,York
 York,York`)
 
-
-
-function onLoad(){
-
+function getDataIntoMap() {
     //get data from long string into a long array of comma seperated strings
     let dataArray = data.split("\n")
 
@@ -2598,6 +2595,14 @@ function onLoad(){
         }
     }
 
+    return countyMap;
+}
+
+
+function onLoad(){
+
+    let countyMap = getDataIntoMap();
+
     //i could merge the two prior for loops but not doing for now for legibility
 
     //set up the select box with our new list of counties
@@ -2618,6 +2623,14 @@ function onLoad(){
 
         const formData = new FormData(form)
         console.log(formData)
+
+        let selectedCounty = "";
+        //for loop for a single entry is bodged but its the only way i can get it to work
+        for(const x of formData) {
+            selectedCounty = x[1];
+        }
+
+        console.log(selectedCounty)
 
     })
 
