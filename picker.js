@@ -2575,23 +2575,43 @@ function onLoad(){
 
     //get data from long string into a long array of comma seperated strings
     let dataArray = data.split("\n")
-    console.log(data)
-    console.log(dataArray)
 
     //split the array of comma seperated strings into a 2d array of station-county pairs
     let data2dArray = new Array(dataArray.length)
     for(var i = 0; i < dataArray.length; i++) {
         data2dArray[i] = dataArray[i].split(",");
     }
-    console.log(data2dArray)
+
+    //loop through the list to get all the unique county names to add to the select list, as well as the
+    //indexes where their ranges start and end.
+    let countyMap = new Map();
+
+    //add the first county to the map
+    countyMap.set(data2dArray[0][1],0)
+
+    for(let i = 1; i < data2dArray.length; i++) {
+        if(data2dArray[i][1] != data2dArray[i-1][1]){
+            //this means we got a new unique county
+            //store it as a key-value pair with the name of the county and the index where it first appears
+            //javascript stores items in the map in insertion order
+            countyMap.set(data2dArray[i][1], i)
+        }
+    }
+    console.log(countyMap)
+
+    //set up the select box with our new list of counties
+    let selectBox = document.getElementById("selectBox")
+    for(const key of countyMap.keys()) {
+        let option = document.createElement("option")
+        option.text = key
+        selectBox.add(option)
+    }
+
 
     const form = document.getElementById("form")
 
     form.addEventListener("submit", (event) => {
-
-
         event.preventDefault()
-    
     
     })
 
