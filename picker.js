@@ -2639,8 +2639,10 @@ function onLoad(){
             selectedCounty = x[1];
         }
 
-        let minMaxBound;
-        if(selectedCounty = "All Counties") {
+        console.log("selected county is", selectedCounty)
+
+        let minMaxBound = [];
+        if(selectedCounty === "All Counties") {
             minMaxBound = [0,data2dArray.length - 1]
         } else {
             minMaxBound = getRandomCountyMinMaxBound(countyArray, selectedCounty)
