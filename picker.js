@@ -2569,48 +2569,49 @@ Wrexham General,Wrexham - Wrecsam
 Poppleton,York
 York,York`)
 
-function getDataIntoMap() {
+let data2dArray = new Array()
+function getDataIntoArray() {
     //get data from long string into a long array of comma seperated strings
     let dataArray = data.split("\n")
 
     //split the array of comma seperated strings into a 2d array of station-county pairs
-    let data2dArray = new Array(dataArray.length)
+    data2dArray = new Array(dataArray.length)
     for(var i = 0; i < dataArray.length; i++) {
         data2dArray[i] = dataArray[i].split(",");
     }
 
     //loop through the list to get all the unique county names to add to the select list, as well as the
     //indexes where their ranges start and end.
-    let countyMap = new Map();
+    //we're gonna use a 2d array
+    let countyArray = new Array();
 
-    //add the first county to the map
-    countyMap.set(data2dArray[0][1],0)
+    //add the first county to the array
+    countyArray.push([data2dArray[0][1],0])
 
     for(let i = 1; i < data2dArray.length; i++) {
         if(data2dArray[i][1] != data2dArray[i-1][1]){
             //this means we got a new unique county
-            //store it as a key-value pair with the name of the county and the index where it first appears
-            //javascript stores items in the map in insertion order
-            countyMap.set(data2dArray[i][1], i)
+            //store it as a key-value array with the name of the county and the index where it first appears
+            countyArray.push([data2dArray[i][1], i])
         }
     }
 
-    return countyMap;
+    return countyArray;
 }
 
 
 function onLoad(){
 
-    let countyMap = getDataIntoMap();
+    let countyArray = getDataIntoArray();
 
     //i could merge the two prior for loops but not doing for now for legibility
 
     //set up the select box with our new list of counties
     let selectBox = document.getElementById("selectBox")
-    for(const key of countyMap.keys()) {
+    for(const x of countyArray) {
         let option = document.createElement("option")
-        option.text = key
-        option.value = key
+        option.text = x[0]
+        option.value = x[0]
         selectBox.add(option)
     }
 
@@ -2630,10 +2631,38 @@ function onLoad(){
             selectedCounty = x[1];
         }
 
-        console.log(selectedCounty)
-
+        const minMaxBound = getRandomCountyMinMaxBound(countyArray, selectedCounty)
+        const selectedStationIndex = getRandomInt(minMaxBound[0], minMaxBound[1])
+        const randomStation = data2dArray[selectedStationIndex][0]
+        document.getElementById("selectedStation").textContent = randomStation
     })
 
+}
+
+function getRandomCountyMinMaxBound(countyArray, selectedCounty) {
+
+    //get index of the selected county within the array
+    const indexOfSelectedCounty = countyArray.findIndex(element => element[0] === selectedCounty)
+
+    const minBound = countyArray[indexOfSelectedCounty][1]
+    const maxBound = countyArray[indexOfSelectedCounty + 1][1] - 1
+
+    return [minBound,maxBound]
+    
+}
+
+/**
+ * Returns a random integer between min (inclusive) and max (inclusive).
+ * The value is no lower than min (or the next integer greater than min
+ * if min isn't an integer) and no greater than max (or the next integer
+ * lower than max if max isn't an integer).
+ * Using Math.round() will give you a non-uniform distribution!
+ * stolen from Mozilla
+ */
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
     
 
