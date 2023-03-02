@@ -121,13 +121,13 @@ Kearsley (Manchester),Bolton
 Lostock,Bolton
 Moses Gate,Bolton
 Westhoughton,Bolton
-Bournemouth,"Bournemouth, Christchurch and Poole"
-Branksome,"Bournemouth, Christchurch and Poole"
-Christchurch,"Bournemouth, Christchurch and Poole"
-Hamworthy,"Bournemouth, Christchurch and Poole"
-Parkstone (Dorset),"Bournemouth, Christchurch and Poole"
-Pokesdown,"Bournemouth, Christchurch and Poole"
-Poole,"Bournemouth, Christchurch and Poole"
+Bournemouth,Bournemouth, Christchurch and Poole
+Branksome,Bournemouth, Christchurch and Poole
+Christchurch,Bournemouth, Christchurch and Poole
+Hamworthy,Bournemouth, Christchurch and Poole
+Parkstone (Dorset),Bournemouth, Christchurch and Poole
+Pokesdown,Bournemouth, Christchurch and Poole
+Poole,Bournemouth, Christchurch and Poole
 Bracknell,Bracknell Forest
 Crowthorne,Bracknell Forest
 Martins Heron,Bracknell Forest
@@ -179,18 +179,18 @@ London Road (Brighton),Brighton and Hove
 Moulsecoomb,Brighton and Hove
 Portslade,Brighton and Hove
 Preston Park,Brighton and Hove
-Avonmouth,"Bristol, City of"
-Bedminster,"Bristol, City of"
-Bristol Temple Meads,"Bristol, City of"
-Clifton Down,"Bristol, City of"
-Lawrence Hill,"Bristol, City of"
-Montpelier,"Bristol, City of"
-Parson Street,"Bristol, City of"
-Redland,"Bristol, City of"
-Sea Mills,"Bristol, City of"
-Shirehampton,"Bristol, City of"
-St Andrews Road,"Bristol, City of"
-Stapleton Road,"Bristol, City of"
+Avonmouth,Bristol, City of
+Bedminster,Bristol, City of
+Bristol Temple Meads,Bristol, City of
+Clifton Down,Bristol, City of
+Lawrence Hill,Bristol, City of
+Montpelier,Bristol, City of
+Parson Street,Bristol, City of
+Redland,Bristol, City of
+Sea Mills,Bristol, City of
+Shirehampton,Bristol, City of
+St Andrews Road,Bristol, City of
+Stapleton Road,Bristol, City of
 Anerley,Bromley
 Beckenham Junction,Bromley
 Bickley,Bromley
@@ -1072,10 +1072,10 @@ Harold Wood,Havering
 Rainham (Essex),Havering
 Romford,Havering
 Upminster,Havering
-Colwall,"Herefordshire, County of"
-Hereford,"Herefordshire, County of"
-Ledbury,"Herefordshire, County of"
-Leominster,"Herefordshire, County of"
+Colwall,Herefordshire, County of
+Hereford,Herefordshire, County of
+Ledbury,Herefordshire, County of
+Leominster,Herefordshire, County of
 Apsley,Hertfordshire
 Baldock,Hertfordshire
 Bayford,Hertfordshire
@@ -1333,7 +1333,7 @@ Westgate-On-Sea,Kent
 Whitstable,Kent
 Wye,Kent
 Yalding,Kent
-Hull,"Kingston upon Hull, City of"
+Hull,Kingston upon Hull, City of
 Berrylands,Kingston upon Thames
 Chessington North,Kingston upon Thames
 Chessington South,Kingston upon Thames
@@ -2597,22 +2597,28 @@ function onLoad(){
             countyMap.set(data2dArray[i][1], i)
         }
     }
-    console.log(countyMap)
+
+    //i could merge the two prior for loops but not doing for now for legibility
 
     //set up the select box with our new list of counties
     let selectBox = document.getElementById("selectBox")
     for(const key of countyMap.keys()) {
         let option = document.createElement("option")
         option.text = key
+        option.value = key
         selectBox.add(option)
     }
 
-
     const form = document.getElementById("form")
 
+    //inside these brackets is the code to be run when the form is submitted
     form.addEventListener("submit", (event) => {
         event.preventDefault()
-    
+        console.log("here")
+
+        const formData = new FormData(form)
+        console.log(formData)
+
     })
 
 }
