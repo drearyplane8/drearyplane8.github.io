@@ -2608,6 +2608,14 @@ function onLoad(){
 
     //set up the select box with our new list of counties
     let selectBox = document.getElementById("selectBox")
+
+    //add a special case for all options
+    let allOption = document.createElement("option")
+    allOption.text = "All Counties"
+    allOption.value = "All Counties"
+    allOption.selected = true;
+    selectBox.add(allOption)
+
     for(const x of countyArray) {
         let option = document.createElement("option")
         option.text = x[0]
@@ -2631,7 +2639,12 @@ function onLoad(){
             selectedCounty = x[1];
         }
 
-        const minMaxBound = getRandomCountyMinMaxBound(countyArray, selectedCounty)
+        let minMaxBound;
+        if(selectedCounty = "All Counties") {
+            minMaxBound = [0,data2dArray.length - 1]
+        } else {
+            minMaxBound = getRandomCountyMinMaxBound(countyArray, selectedCounty)
+        }
         const selectedStationIndex = getRandomInt(minMaxBound[0], minMaxBound[1])
         const randomStation = data2dArray[selectedStationIndex][0]
         document.getElementById("selectedStation").textContent = randomStation
