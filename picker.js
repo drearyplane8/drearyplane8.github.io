@@ -66,13 +66,13 @@ Layton (Lancs),Blackpool
 Ebbw Vale Parkway,Blaenau Gwent - Blaenau Gwent
 Ebbw Vale Town,Blaenau Gwent - Blaenau Gwent
 Llanhilleth,Blaenau Gwent - Blaenau Gwent
-Bournemouth,"Bournemouth Christchurch and Poole"
-Branksome,"Bournemouth Christchurch and Poole"
-Christchurch,"Bournemouth Christchurch and Poole"
-Hamworthy,"Bournemouth Christchurch and Poole"
-Parkstone (Dorset),"Bournemouth Christchurch and Poole"
-Pokesdown,"Bournemouth Christchurch and Poole"
-Poole,"Bournemouth Christchurch and Poole"
+Bournemouth,Bournemouth Christchurch and Poole
+Branksome,Bournemouth Christchurch and Poole
+Christchurch,Bournemouth Christchurch and Poole
+Hamworthy,Bournemouth Christchurch and Poole
+Parkstone (Dorset),Bournemouth Christchurch and Poole
+Pokesdown,Bournemouth Christchurch and Poole
+Poole,Bournemouth Christchurch and Poole
 Bracknell,Bracknell Forest
 Crowthorne,Bracknell Forest
 Martins Heron,Bracknell Forest
@@ -108,18 +108,18 @@ London Road (Brighton),Brighton and Hove
 Moulsecoomb,Brighton and Hove
 Portslade,Brighton and Hove
 Preston Park,Brighton and Hove
-Avonmouth,"Bristol City of"
-Bedminster,"Bristol City of"
-Bristol Temple Meads,"Bristol City of"
-Clifton Down,"Bristol City of"
-Lawrence Hill,"Bristol City of"
-Montpelier,"Bristol City of"
-Parson Street,"Bristol City of"
-Redland,"Bristol City of"
-Sea Mills,"Bristol City of"
-Shirehampton,"Bristol City of"
-St Andrews Road,"Bristol City of"
-Stapleton Road,"Bristol City of"
+Avonmouth,Bristol City of
+Bedminster,Bristol City of
+Bristol Temple Meads,Bristol City of
+Clifton Down,Bristol City of
+Lawrence Hill,Bristol City of
+Montpelier,Bristol City of
+Parson Street,Bristol City of
+Redland,Bristol City of
+Sea Mills,Bristol City of
+Shirehampton,Bristol City of
+St Andrews Road,Bristol City of
+Stapleton Road,Bristol City of
 Anerley,Bromley
 Beckenham Junction,Bromley
 Bickley,Bromley
@@ -1064,10 +1064,10 @@ Harold Wood,Havering
 Rainham (Essex),Havering
 Romford,Havering
 Upminster,Havering
-Colwall,"Herefordshire County of"
-Hereford,"Herefordshire County of"
-Ledbury,"Herefordshire County of"
-Leominster,"Herefordshire County of"
+Colwall,Herefordshire County of
+Hereford,Herefordshire County of
+Ledbury,Herefordshire County of
+Leominster,Herefordshire County of
 Apsley,Hertfordshire
 Baldock,Hertfordshire
 Bayford,Hertfordshire
@@ -1325,7 +1325,7 @@ Westgate-On-Sea,Kent
 Whitstable,Kent
 Wye,Kent
 Yalding,Kent
-Hull,"Kingston upon Hull City of"
+Hull,Kingston upon Hull City of
 Berrylands,Kingston upon Thames
 Chessington North,Kingston upon Thames
 Chessington South,Kingston upon Thames
@@ -2572,7 +2572,6 @@ York,York`)
 let data2dArray = new Array()
 function getDataIntoArray() {
     //get data from long string into a long array of comma seperated strings, removing the quote marks
-    data = data.replace('"', '')
     let dataArray = data.split("\n")
 
     //split the array of comma seperated strings into a 2d array of station-county pairs
