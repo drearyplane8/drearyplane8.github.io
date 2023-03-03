@@ -2628,18 +2628,14 @@ function onLoad(){
     //inside these brackets is the code to be run when the form is submitted
     form.addEventListener("submit", (event) => {
         event.preventDefault()
-        console.log("here")
 
         const formData = new FormData(form)
-        console.log(formData)
 
         let selectedCounty = "";
         //for loop for a single entry is bodged but its the only way i can get it to work
         for(const x of formData) {
             selectedCounty = x[1];
         }
-
-        console.log("selected county is", selectedCounty)
 
         let minMaxBound = [];
         if(selectedCounty === "All Counties") {
@@ -2660,7 +2656,13 @@ function getRandomCountyMinMaxBound(countyArray, selectedCounty) {
     const indexOfSelectedCounty = countyArray.findIndex(element => element[0] === selectedCounty)
 
     const minBound = countyArray[indexOfSelectedCounty][1]
-    const maxBound = countyArray[indexOfSelectedCounty + 1][1] - 1
+    let maxBound = 0
+
+    if(indexOfSelectedCounty === countyArray.length - 1) {
+        maxBound = data2dArray.length - 1
+    } else maxBound = countyArray[indexOfSelectedCounty + 1][1] - 1
+
+    console.log("bounds", minBound, maxBound)
 
     return [minBound,maxBound]
     
