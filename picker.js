@@ -1148,6 +1148,7 @@ Golspie,Highland
 Helmsdale,Highland
 Invergordon,Highland
 Inverness,Highland
+Inverness Airport, Highland
 Invershin,Highland
 Kildonan,Highland
 Kinbrace,Highland
