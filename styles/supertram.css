@@ -1,0 +1,11 @@
+h2.centre {
+    margin: 0px auto;
+}
+
+div {
+    clear: both;
+}
+
+figcaption {
+    text-align: center;
+}
