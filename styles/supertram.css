@@ -26,3 +26,9 @@ img {
 .images-with-captions img {
     float: none;
 }
+
+@media (max-aspect-ratio: 1/1) {
+    img {
+        max-height: 20rem;
+    }
+}
