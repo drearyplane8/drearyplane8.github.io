@@ -10,6 +10,19 @@ div {
     clear: both;
 }
 
-figcaption {
+img {
+    max-height: 12rem;
+    margin: 5px;
+    float: left;
+}
+
+.images-with-captions {
+    display: flex;
     text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.images-with-captions img {
+    float: none;
 }
