@@ -6,14 +6,29 @@ h2.centre {
     margin: 0px auto;
 }
 
+.text-centre {
+    text-align: center;
+}
+
 div {
     clear: both;
 }
 
 img {
     max-height: 12rem;
+    height: auto;
+    width: auto;
+    
     margin: 5px;
     float: left;
+}
+
+img.right {
+    float: right;
+}
+
+figure {
+    max-width: 22rem;
 }
 
 .images-with-captions {
@@ -30,5 +45,8 @@ img {
 @media (max-aspect-ratio: 1/1) {
     img {
         max-height: 20rem;
+    }
+    figure {
+        max-width: 36rem;
     }
 }
