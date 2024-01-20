@@ -23,7 +23,7 @@ img {
     float: left;
 }
 
-img.right {
+img.second-image {
     float: right;
 }
 
@@ -48,5 +48,8 @@ figure {
     }
     figure {
         max-width: 36rem;
+    }
+    img.second-image {
+        float: left;
     }
 }
