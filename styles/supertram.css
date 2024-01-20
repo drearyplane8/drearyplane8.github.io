@@ -52,4 +52,7 @@ figure {
     img.second-image {
         float: left;
     }
+    figure {
+        font-size: 1.25rem;
+    }
 }
