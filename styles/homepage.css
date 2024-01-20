@@ -38,6 +38,26 @@ div#blog-posts {
     grid-column: 2/2;
 }
 
+div#banners {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div#banners img {
+    width: 30%;
+    height: auto;
+    margin: 0px 6px;
+}
+
+input#hide-banners:checked~div#banners {
+    display: none;
+}
+
+@media (prefers-reduced-motion) {
+    div#banners {
+        display: none;
+    }
+}
 
 @media (max-aspect-ratio: 1/1) {
     div#wrapper {
