@@ -2,6 +2,17 @@
     text-align: right;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
 h2.centre {
     margin: 0px auto;
 }
@@ -23,7 +34,7 @@ img {
     float: left;
 }
 
-img.second-image {
+.second-image {
     float: right;
 }
 
