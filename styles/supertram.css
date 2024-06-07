@@ -53,6 +53,8 @@ figure {
     float: none;
 }
 
+.not-thumbnail {}
+
 @media (max-aspect-ratio: 1/1) {
     img {
         max-height: 20rem;
