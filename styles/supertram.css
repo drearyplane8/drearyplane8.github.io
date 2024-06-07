@@ -25,6 +25,11 @@ div {
     clear: both;
 }
 
+#intro {
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+
 img {
     max-height: 12rem;
     height: auto;
