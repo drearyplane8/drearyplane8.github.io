@@ -12,12 +12,15 @@ header {
 
 #header-col1 {
     grid-column: 1;
+    align-content: center;
 }
 
 #header-col2 {
     grid-column: 2;
+    align-content: center;
 }
 
 #header-col3 {
     grid-column: 3;
+    align-content: center;
 }
