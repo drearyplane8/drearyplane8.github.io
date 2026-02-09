@@ -1,0 +1,17 @@
+.rating {
+    text-align: center;
+}
+
+.rating strong {
+    font-size: x-large;
+}
+
+.star {
+    color: gold;
+}
+
+main {
+    margin-top: 1%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
