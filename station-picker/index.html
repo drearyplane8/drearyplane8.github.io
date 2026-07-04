@@ -6,9 +6,12 @@
         <link rel="stylesheet" href="../styles/all-pages.css">
     </head>
     <body onload="onLoad()">
+
         <h1>
-            Pick a County
+            By-County Station Picker
         </h1>
+
+        This is a poorly-written tool made for a friend that allows you to select a random National Rail station by county*. No data is being sent, it is all done client side. The list of stations is embedded straight into the javascript file. Please be nice.
 
         <form id="form">
             <!-- it is absolutely necessary that this has a name-->
@@ -16,6 +19,8 @@
             <button type="submit">Choose a Station</button><p>
             <span id="selectedStation">&nbsp;</span>
         </form>
+
+        * I've forgotten which kind — it looks to be a list of both non-metropolitan counties and unitary authorities (incl. London boroughs), at least for England.
 
         <a href="../index.html">Return to Home</a>
 
