@@ -1,14 +1,26 @@
 /* Made with ♥ by Louis Bullock (not me!)*/
 
-/* Wood Base Gradient*/
-.wood {
-
+:root {
     --wm1: rgba(255, 255, 255, 0.014);
     --wm2: rgba(255, 255, 255, 0.015);
     --wm3: rgba(255, 255, 255, 0.02);
 
     --wc1: #D1A46B;
     --wc2: #B57744;
+
+    --dwm1: rgba(255, 255, 255, 0.014);
+    --dwm2: rgba(255, 255, 255, 0.015);
+    --dwm3: rgba(255, 255, 255, 0.02);
+
+    --dwc1: #855b34;
+    --dwc2: #823E14;
+
+    --wlc: #3399ff;
+    --wlcv: #ccaaff;
+}
+
+/* Wood Base Gradient*/
+.wood {
 
     background-image: radial-gradient(var(--wc1),var(--wc2));
     background-size: 100%;
@@ -35,15 +47,7 @@
 
 
 .darkwood {
-
-    --wm1: rgba(255, 255, 255, 0.014);
-    --wm2: rgba(255, 255, 255, 0.015);
-    --wm3: rgba(255, 255, 255, 0.02);
-
-    --wc1: #855b34;
-    --wc2: #823E14;
-
-    background-image: radial-gradient(var(--wc1),var(--wc2));
+    background-image: radial-gradient(var(--dwc1),var(--dwc2));
     background-size: 100%;
 
 }
@@ -57,10 +61,10 @@
     position: absolute;
 
     background-image:
-    linear-gradient(to right, var(--wm1) 50%, transparent 50%),
-    linear-gradient(to right, var(--wm2) 50%, transparent 50%),
-    linear-gradient(to right, transparent 50%, var(--wm3) 50%),
-    linear-gradient(to right, transparent 50%, var(--wm3) 50%);
+    linear-gradient(to right, var(--dwm1) 50%, transparent 50%),
+    linear-gradient(to right, var(--dwm2) 50%, transparent 50%),
+    linear-gradient(to right, transparent 50%, var(--dwm3) 50%),
+    linear-gradient(to right, transparent 50%, var(--dwm3) 50%);
 
     background-size: 13px, 29px, 37px, 53px;
 }
