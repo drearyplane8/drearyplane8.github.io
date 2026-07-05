@@ -1,62 +1,81 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>UnorderedCollection&lt;T&gt;</title>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+        <link rel=stylesheet href=/styles/all_pages.css>
+        <link rel=stylesheet href=/styles/homepage_new.css>
+        <link rel=stylesheet href=/styles/wood.css>
+    </head>
 
-<head>
-    <title>An Unordered Collection</title>
-    <link rel="stylesheet" href="styles/all-pages.css">
-    <link rel="stylesheet" href="styles/homepage.css">
-</head>
+    <body>
 
-<body>
-    <header>
-        <h1 id="header-col2">An Unordered Collection</h1>
-        <p style="font-weight: bold;"> of things I think are cool </p>
-    </header>
-    <div id="wrapper">
-        
+        <header class="wood">
+            <h1 id=header-col2>UnorderedCollection&lt;<span>thingsithinkarecool</span>&gt;</h1>
+            <span id=header-col3><a href=/index.html>Return to Home</a></span>
+        </header>
+        <hr class=corner_hr>
+        <nav class="wood">
+            <ul>
+            <li class=locked>
+                <h2><a href=/visimon/index.html>Visimon</a></h2>
+            </li>
+
+            <li class=locked>
+                <h2><a href=/am-tatort/index.html>Am Tatort</a></h2>
+            </li>
+
+
+            <li class=hoverable>
+                <h2>Transport</h2>
+                <img src=images/doorhandle.png class=doorhandle alt="A doorhandle">
+
+                <div class="hoverlist">
+                    <ul class=darkwood> <!-- dropdown menu -->
+                        <li> <a href=/station-picker/index.html>Station Picker</a>
+                        <li> <a href=/blogs/northern-city-line.html>Northern City Line</a>
+                        <li> <a href=/blogs/supertram-end-of-the-line.html>Sheffield Supertram End-of-the-Line</a>
+                    </ul>
+                    <div class="hoverhandle wood">
+                        <img src=//images/doorhandle.png class="doorhandle" alt="A doorhandle">
+                    </div>
+                </div>
+            </li>
+            </ul>
+        </nav>
+
+        <div id=main_grid>
+
+        <aside id=leftm>
+            <p style="rotate: -20deg; color: blue;"> don't forget to buy milk
+            <p> write more blog posts
+            <p style="rotate: -60deg; color: green;"> clear out gts image cache
+        </aside>
+
         <main>
-            <h2>Welcome to my website!</h2>
-            <p>
-                It's a personal website through and through; an unordered collection of things I think are cool, in which you
-                may find radically little of interest.
-            </p>
-            <p>
-                Above, or on your right, you should find the sidebar containing Goodies, which are little 
-                interactive widgets and thingymajigs I am hosting here, as well as the Blogs
-                column, where I am liable to write about whatever takes my fancy, including but not limited to transport
-                and German police procedurals.
-            </p>
-            <p>
-                Most of the website should look passable on mobile now!
-            </p>
-            
-            
+            <p> Welcome to my website, an unordered collections of things in which you may find radically little interest. Do rifle through the drawers above this text, and see what you may find. I've heard there are travelogues, TV reviews, and personal programming projects up there, but I'm not quite sure.
+
+            <h3>Contact Me</h3>
+
+            <p> Feel free to write me an email: comments@{this website's URL}, whether about the website's content, recruitment, or just for fun. </p>
+
             <input id="hide-banners" type="checkbox" name="hide-banners">
-            <label for="hide-banners">Hide animated banners</label>
-            <p>
+            <label for="hide-banners">Hide animated banners</label> <br>
             <div id="banners">
-                <img src="images/this-user-is-trains.webp" alt="An animated banner reading This user is Trains">
-                <img src="images/use-firefox.webp" alt="An animated banner reading Use Firefox">
+                <img src="//images/this-user-is-trains.webp" alt="An animated banner reading This user is Trains" height=40>
+                <img src="//images/use-firefox.webp" alt="An animated banner reading Use Firefox" height=40>
             </div>
         </main>
-        <nav>
-            <div id="toys">
-                <h2 id=toys-header>
-                    Goodies<br><hr>
-                </h2>
-                <a href="station-picker/index.html">Station Picker</a>
-                <a href="am-tatort/index.html">Am Tatort</a>
-                <a href="visimon/index.html">Visimon</a>
-            </div>
-            <div id="blog-posts">
-                <h2 id="blog-posts-header">
-                    <a href="blogs/index.html">Blog Posts</a><br><hr>
-                </h2>
-                <a href="blogs/northern-city-line.html">Northern City Line</a>
-                <a href="blogs/supertram-end-of-the-line.html">Sheffield Supertram End of the Line</a>
-            </div>
-        </nav>
-    </div>
-</body>
+
+        <aside id=rightm>
+            <p style="rotate: 8deg; font-weight: bold; color: #888888;"> start that telephone project
+            <p style="rotate: -5deg; color: magenta;"> look for a job
+            <p>
+        </aside>
+
+        </div>
+
+
+    </body>
 
 </html>
