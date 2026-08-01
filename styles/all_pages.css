@@ -156,3 +156,7 @@ nav>ul>li:hover>.hoverlist {
 img.doorhandle {
     width: 8em;
 }
+
+main {
+    position:relative;
+}
