@@ -3,45 +3,50 @@
 
 <head>
     <title>Blog Homepage</title>
-    <link rel="stylesheet" href="../styles/all-pages.css">
-    <style>
-
-        body {
-            font-family: sans-serif;
-        }
-
-        header {           
-            background-color: #F5A9B8;
-
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-
-        .header-center {
-            grid-column: 2;
-            grid-row: 1;
-            text-align: center;
-        }
-
-        .header-right {
-            grid-column: 3;
-            grid-row: 1;
-            text-align: right;
-        }
-
-    </style>
+    <link rel="stylesheet" href="/styles/all_pages.css">
+    <link rel="stylesheet" href="/styles/wood.css">
 </head>
 
 <body>
+    <div class=wood>
     <header>
-        <h1 class="header-center">
-            Lottie's Blogs
-        </h1>
-        <p class="header-right">
-            <a href="../index.html">Return to Home</a>
-        </p>
+      <h1 id=header-col2>Blogs</h1>
+      <p id=header-col3>
+      <a href=../index.html>Back to Home</a>
+      </p>
     </header>
+    <hr class=corner_hr>
+    <nav>
+        <ul>
+        <li class=locked>
+            <h2><a href=/visimon/index.html>Visimon</a></h2>
+        </li>
 
+        <li class=locked>
+            <h2><a href=index.html>Am Tatort</a></h2>
+        </li>
+
+
+        <li class=hoverable>
+            <h2>Transport</h2>
+            <img src=../images/doorhandle.png class=doorhandle alt="A doorhandle">
+
+            <div class="hoverlist">
+                <ul class=darkwood> <!-- dropdown menu -->
+                    <li> <a href=/station-picker/index.html>Station Picker</a>
+                    <li> <a href=/blogs/northern-city-line.html>Northern City Line</a>
+                    <li> <a href=/blogs/supertram-end-of-the-line.html>Sheffield Supertram End-of-the-Line</a>
+                </ul>
+                <div class="hoverhandle wood">
+                    <img src=/images/doorhandle.png class="doorhandle" alt="A doorhandle">
+                </div>
+            </div>
+        </li>
+        </ul>
+    </nav>
+    </div>
+
+    <main>
     <h3>Welcome to the blog posts!</h3>
     <p>This is the homepage where I will link all my blogposts.</p>
 
@@ -53,6 +58,7 @@
             <a href="supertram-end-of-the-line.html">Sheffield Supertram End of the Line</a>
         </li>
     </ul>
+    </main>
 
 </body>
 
