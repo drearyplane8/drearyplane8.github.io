@@ -18,8 +18,24 @@
 
     <main>
 
+	<p>
+	Visimon is made up of two componenets, the modified Haskell Language Server (HLS) which provides type-checking information, and the VSCode extension that provides a user
+	interface and displays the visualisations. Both of these parts are required for the tool to function. 
+
+	The extension <em>can</em> automatically download the HLS, but this currently only works on Linux until I update the URL. For now I recommend installing the HLS manually and adding its path to the
+	&quot;Hls Path&quot; VSCode setting.
+	</p>
+
+	<h2>Extension</h2>
+
+	<p> The VSCode extension that displays the visualisations can be downloaded from <a href="https://marketplace.visualstudio.com/items?itemName=visimon.visimon-ext">its VSCode Marketplace page</a> </p>
+
         <h2>Builds</h2>
-        <ul>
+        <p>
+	    These builds are for the modified HLS that provides the typechecking information to the VSCode extension. 
+	</p>
+
+	<ul>
             <li><a href="haskell-language-server-linux">Linux</a> (Compiled on 6.19.14-arch1-1, Cabal 3.12.1.0, GHC 9.6.7)</li>
             <li><a href="haskell-language-server-win32">Windows</a> (Compiled on Windows 11 (msys2), Cabal 3.12.1.0, GHC 9.6.7)</li>
         </ul>
